@@ -24,8 +24,9 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'src-sw.js'
+        swDest: 'src-sw.js',
       }),
+
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
@@ -59,12 +60,12 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/prest-env'],
+              presets: ['@babel/preset-env'],
               plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             }
           }
         }
       ],
-    },
+    }
   };
 };
